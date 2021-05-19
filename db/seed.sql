@@ -1,7 +1,9 @@
+drop table if exists helo_users
+
 create table helo_users(
    id serial primary key,
-   username varchar(25) not null,
-   password varchar(25) not null,
+   username varchar(50) not null,
+   password varchar(200) not null,
    profile_pic text
 );
 
@@ -12,5 +14,5 @@ create table helo_posts(
    img text,
    author_id integer references helo_users(id),
    --throwing an error on line above
-   date_created timestamp,
+   date_created timestamp
 );

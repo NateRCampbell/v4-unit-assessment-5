@@ -41,4 +41,10 @@ module.exports = {
       req.session.destroy();
       return res.sendStatus(200);
    },
+   getUser: (req, res) => {
+      if (!req.session.user) {
+         return res.status(401).send("User not found");
+      }
+      return res.status(200).send(req.session.user);
+   },
 };

@@ -12,7 +12,7 @@ const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 app.use(express.json());
 
 massive({
-   connection_string: CONNECTION_STRING,
+   connectionString: CONNECTION_STRING,
    ssl: {
       rejectUnauthorized: false,
    },
@@ -31,7 +31,7 @@ app.use(
    })
 );
 
-//Auth Endpoints
+// Auth Endpoints
 app.post("/api/auth/register", userCtrl.register);
 app.post("/api/auth/login", userCtrl.login);
 app.get("/api/auth/me", userCtrl.getUser);
